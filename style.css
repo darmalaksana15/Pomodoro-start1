@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #1f2933;
+  transition: background 0.4s ease;
+}
+
+body[data-mode="work"] {
+  background: linear-gradient(160deg, #fef2f2 0%, #fee2e2 100%);
+}
+
+body[data-mode="shortBreak"] {
+  background: linear-gradient(160deg, #ecfdf5 0%, #d1fae5 100%);
+}
+
+body[data-mode="longBreak"] {
+  background: linear-gradient(160deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.app {
+  width: min(90vw, 24rem);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.session-count {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: #52606d;
+}
+
+.mode-tabs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1.75rem 0;
+}
+
+.mode-tab {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #cbd2d9;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #52606d;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.mode-tab:hover {
+  border-color: #9aa5b1;
+}
+
+.mode-tab.is-active {
+  background: #fff;
+  color: #1f2933;
+  border-color: #1f2933;
+  font-weight: 600;
+}
+
+.timer {
+  font-size: clamp(3.5rem, 18vw, 5rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+button {
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background: #dc2626;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+body[data-mode="shortBreak"] button:not(.secondary),
+body[data-mode="longBreak"] button:not(.secondary) {
+  background: #059669;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button.secondary {
+  background: transparent;
+  color: #52606d;
+  border: 1px solid #cbd2d9;
+}
+
+button.secondary:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
