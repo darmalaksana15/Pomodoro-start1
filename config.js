@@ -4,3 +4,5 @@ const POMODORO_CONFIG = {
   longBreak: 15 * 60,
   sessionsBeforeLongBreak: 4,
 };
+//sessionBeforeLongBreak :Setelah 4 sesi kerja selesai, pengguna akan mendapatkan istirahat panjang.
+//Sumber:https://freshman.tech/pomodoro-timer/
