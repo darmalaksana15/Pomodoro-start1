@@ -4,7 +4,9 @@ const sessionEl = document.getElementById("session-number");
 const startBtn = document.getElementById("start-btn");
 const resetBtn = document.getElementById("reset-btn");
 const modeTabs = document.querySelectorAll(".mode-tab");
-
+//getElementById:
+//querySelectorAll:Mengambil semua elemen yang memiliki class mode-tab, misalnya tab Work, Short Break, dan Long Break.
+//Sumber:https://www.w3schools.com/jsref/met_document_getelementbyid.asp
 function formatTime(totalSeconds) {
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;
