@@ -9,29 +9,95 @@
 <body data-mode="work">
   <main class="app">
     <header class="header">
+    <!-- Header berisi informasi pembuka atau identitas aplikasi.
+    Sumber: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header
+      -->
       <h1>Pomodoro</h1>
+       <!--Heading utama halaman. Digunakan untuk menampilkan judul aplikasi Pomodoro.
+      Sumber:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements
+      -->
       <p class="session-count">Session <span id="session-number">1</span></p>
+      <!--
+      Menampilkan jumlah sesi Pomodoro yang sedang berjalan.
+      Elemen span digunakan untuk menampilkan angka sesi yang dapat diubah oleh JavaScript.
+      Sumber:
+      MDN Web Docs - <span>
+      https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span
+      -->
     </header>
 
     <nav class="mode-tabs" aria-label="Timer mode">
+       <!--
+    Elemen navigasi untuk memilih mode timer.
+    aria-label membantu teknologi bantu seperti screen reader memahami fungsi navigasi.
+    Sumber:
+    MDN Web Docs - <nav>
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
+    -->
       <button type="button" class="mode-tab is-active" data-mode="work">Work</button>
       <button type="button" class="mode-tab" data-mode="shortBreak">Short Break</button>
       <button type="button" class="mode-tab" data-mode="longBreak">Long Break</button>
+      <!--
+      Tombol digunakan untuk memilih mode timer.
+      data-mode menyimpan informasi mode yang akan digunakan JavaScript.
+      class is-active menunjukkan mode yang sedang aktif.
+      Sumber:
+      MDN Web Docs - <button>
+      https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+      -->
     </nav>
 
     <div class="timer" role="timer" aria-live="polite">
+       <!--
+    Area tampilan timer.
+    role="timer" memberi informasi kepada screen reader bahwa elemen ini adalah timer.
+    aria-live="polite" memberi tahu screen reader untuk mengumumkan perubahan secara otomatis tanpa mengganggu pengguna.
+    Sumber:
+    MDN Web Docs - ARIA Live Regions
+    https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions
+    -->
       <span id="minutes">25</span>:<span id="seconds">00</span>
+       <!--
+      Menampilkan nilai menit dan detik timer.
+      ID digunakan agar JavaScript dapat memperbarui nilainya secara dinamis.
+      Sumber:
+      MDN Web Docs - Document.getElementById()
+      https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+      -->
     </div>
 
     <div class="controls">
+       <!--
+    Container yang menampung tombol kontrol timer.
+    -->
       <button id="start-btn" type="button">Start</button>
       <button id="reset-btn" type="button" class="secondary">Reset</button>
-      #GONG
+      <!--
+      Tombol Start digunakan untuk memulai atau menghentikan timer.
+      Tombol Reset digunakan untuk mengembalikan timer ke kondisi awal.
+      ID digunakan agar JavaScript dapat menambahkan event listener.
+      Sumber:
+      MDN Web Docs - addEventListener()
+      https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+      -->
     </div>
   </main>
 
   <script src="config.js"></script>
+   <!--
+  Memuat file konfigurasi aplikasi Pomodoro.
+  Biasanya berisi pengaturan durasi kerja dan istirahat.
+  Sumber:
+  MDN Web Docs - <script>
+  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
+  -->
   <script src="timer.js"></script>
+   <!--
+  Memuat file yang berisi logika timer seperti hitung mundur dan pergantian mode.
+  -->
   <script src="app.js"></script>
+   <!--
+  Memuat file utama aplikasi yang menghubungkan antarmuka dengan logika program.
+  -->
 </body>
 </html>
