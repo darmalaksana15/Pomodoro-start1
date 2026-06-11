@@ -1,4 +1,11 @@
 class PomodoroTimer {
+   /*Constructor merupakan metode khusus yang otomatis dipanggilsaat objek baru dibuat menggunakan keyword new.
+  Parameter:
+  - durations  : menyimpan durasi setiap mode timer.
+  - onTick     : callback yang dijalankan setiap detik.
+  - onComplete : callback yang dijalankan saat timer selesai.
+  Sumber:MDN - constructor
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor */
   constructor({ durations, onTick, onComplete }) {
     this.durations = durations;
     this.onTick = onTick;
@@ -10,6 +17,12 @@ class PomodoroTimer {
     this.isRunning = false;
     this.intervalId = null;
   }
+  /*
+  Getter digunakan untuk mengambil nilai durasi
+  berdasarkan mode yang sedang aktif.
+  Getter memungkinkan properti diakses seperti variabel biasa
+  tanpa perlu memanggil fungsi.
+  Sumber:MDN - get https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get*/
 
   get duration() {
     return this.durations[this.mode];
@@ -49,7 +62,9 @@ class PomodoroTimer {
       this.onComplete(this.mode);
     }
   }
-
+ /*
+  Menentukan mode berikutnya setelah sesi kerja selesai. Operator modulus (%) digunakan untuk menentukan apakah sudah mencapai jumlah sesi tertentu.
+  Sumber:MDN - Remainder (%)https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder*/
   completeWorkSession() {
     const isLongBreak =
       this.session % POMODORO_CONFIG.sessionsBeforeLongBreak === 0;
