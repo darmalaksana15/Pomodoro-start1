@@ -62,7 +62,8 @@ body[data-mode="longBreak"] {
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
-
+/*Mengubah warna tombol Start saat mode istirahat aktif.:not(.secondary) berarti hanya tombol yang tidak memiliki class secondary.
+Sumber:MDN - :not()*/
 .mode-tab:hover {
   border-color: #9aa5b1;
 }
@@ -108,16 +109,21 @@ body[data-mode="longBreak"] button:not(.secondary) {
 button:hover {
   transform: translateY(-1px);
 }
-
+/*Efek ketika tombol ditekan.
+translateY(0) mengembalikan posisi tombol.
+Sumber:MDN - :active*/
 button:active {
   transform: translateY(0);
 }
-
+/*Mengatur tampilan tombol Reset.background transparan.border ditambahkan agar tombol tetap terlihat berbeda.
+Sumber:MDN - transparent keyword*/
 button.secondary {
   background: transparent;
   color: #52606d;
   border: 1px solid #cbd2d9;
 }
+/*Efek hover pada tombol Reset.Menampilkan latar belakang semi transparan.
+Sumber:MDN - rgba()*/
 
 button.secondary:hover {
   background: rgba(255, 255, 255, 0.5);
